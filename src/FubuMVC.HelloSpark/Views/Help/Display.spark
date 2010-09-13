@@ -1,0 +1,4 @@
+﻿<use master="empty"/>
+<viewdata model="FubuMVC.HelloSpark.Controllers.HelpViewModel" />
+
+Hello ${Model.RawUrl}

@@ -34,6 +34,7 @@ namespace Spark.Web.FubuMVC.Bootstrap
             return new SparkSettings()
                 .AddAssembly(typeof(PartialTagFactory).Assembly)
                 .AddNamespace("Spark.Web.FubuMVC")
+                .AddNamespace("Spark.Web.FubuMVC.Extensions")
                 .AddNamespace("FubuMVC.UI")
                 .AddNamespace("HtmlTags");
         }
@@ -43,6 +44,7 @@ namespace Spark.Web.FubuMVC.Bootstrap
             ex.ForSingletonOf<SparkViewFactory>();
             ex.For<IServiceLocator>().Use<StructureMapServiceLocator>();
             ex.For<ISparkSettings>().Use(GetSparkSettings);
+            ex.For<ISparkWriterContext>().HybridHttpOrThreadLocalScoped().Use<SparkWriterContext>();
             ex.For(typeof(ISparkViewRenderer<>)).Use(typeof(SparkViewRenderer<>));
         }
 

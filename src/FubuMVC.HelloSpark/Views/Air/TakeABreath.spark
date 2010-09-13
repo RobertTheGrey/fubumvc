@@ -1,4 +1,5 @@
 ﻿<viewdata model="FubuMVC.HelloSpark.Controllers.AirViewModel" />
+<use pageBaseType="Spark.Web.FubuMVC.ViewCreation.SparkView" />
 <content:head>
     <script type="text/javascript" src="../../Scripts/jquery-1.4.2.js"></script>
     <script type="text/javascript" src="/Air/BreatheView"></script>

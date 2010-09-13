@@ -69,6 +69,8 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Bootstrap\ActionAndViewMatchedBySparkViewDescriptors.cs" />
+    <Compile Include="Extensions\SparkViewExtensions.cs" />
+    <Compile Include="ViewCreation\ISparkWriterContext.cs" />
     <Compile Include="ViewCreation\JavaScriptOutputNode.cs" />
     <Compile Include="ViewCreation\JavaScriptResponse.cs" />
     <Compile Include="Bootstrap\SparkDefaultStructureMapRegistry.cs" />

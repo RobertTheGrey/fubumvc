@@ -7,4 +7,8 @@
 
 <content:footer>That's right baby!</content:footer>
 
-!{this.LinkTo<WaterInputModel>().Text("Cool her down!")}
+!{this.LinkTo<WaterInputModel>().Text ("Cool her down!")}
+<br />
+# this.WritePartial<HelpViewModel>();
+<br />
+${this.GetPartial<HelpViewModel>()}

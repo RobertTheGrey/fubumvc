@@ -16,6 +16,7 @@
         {
             return true;
         }
+        public string RawUrl { get; set; }
     }
 
     public class FireViewModel

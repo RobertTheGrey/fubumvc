@@ -31,6 +31,7 @@ namespace FubuMVC.HelloSpark.Controllers
     public class AirViewModel
     {
         public string Text { get; set; }
+        public string RawUrl { get; set; }
     }
 
     public class JsonResponse

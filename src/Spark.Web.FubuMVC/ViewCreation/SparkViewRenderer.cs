@@ -15,12 +15,14 @@ namespace Spark.Web.FubuMVC.ViewCreation
         private readonly HttpContextBase _httpContext;
         private readonly SparkViewFactory _viewFactory;
         private readonly IOutputWriter _writer;
+        private readonly ISparkWriterContext _sparkWriterContext;
 
-        public SparkViewRenderer(SparkViewFactory viewFactory, HttpContextBase httpContext, IOutputWriter writer)
+        public SparkViewRenderer(SparkViewFactory viewFactory, HttpContextBase httpContext, IOutputWriter writer,ISparkWriterContext sparkWriterContext)
         {
             _viewFactory = viewFactory;
             _httpContext = httpContext;
             _writer = writer;
+            _sparkWriterContext = sparkWriterContext;
         }
 
         #region ISparkViewRenderer<T> Members
@@ -44,7 +46,7 @@ namespace Spark.Web.FubuMVC.ViewCreation
             if (configurableView != null)
                 configureView(configurableView);
 
-            sparkView.RenderView(_httpContext.Response.Output);
+            sparkView.RenderView(_sparkWriterContext.Writer);
         }
 
         #endregion
