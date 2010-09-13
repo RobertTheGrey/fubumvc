@@ -9,6 +9,4 @@
 
 !{this.LinkTo<WaterInputModel>().Text ("Cool her down!")}
 <br />
-# this.WritePartial<HelpViewModel>();
-<br />
 ${this.GetPartial<HelpViewModel>()}

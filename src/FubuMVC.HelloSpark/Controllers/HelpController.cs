@@ -10,7 +10,12 @@ namespace FubuMVC.HelloSpark.Controllers
 
     public class HelpViewModel
     {
-        public string RawUrl { get; set; }
+        private string _rawUrl;
+        public string RawUrl
+        {
+            get { return _rawUrl; }
+            set { _rawUrl = value; }
+        }
     }
 
 }

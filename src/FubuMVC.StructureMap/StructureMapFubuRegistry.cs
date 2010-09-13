@@ -31,7 +31,16 @@ namespace FubuMVC.StructureMap
             For<HttpRequestWrapper>().Use(c => BuildRequestWrapper());
 
             //Needed for AssertConfigurationIsValid in global.asax
-            For<AggregateDictionary>().Use(new AggregateDictionary());
+            For<AggregateDictionary>().Use(
+                ctx =>
+                    {
+                        if (HttpContext.Current == null)
+                        {
+                            return new AggregateDictionary();
+                        }
+                        var context = ctx.GetInstance<HttpContextBase>();
+                        return new AggregateDictionary(context.Request.RequestContext);
+                    });
 
             For<HttpContextBase>().Use<HttpContextWrapper>().Ctor<HttpContext>().Is(
                 x => x.ConstructedBy(BuildContextWrapper));
